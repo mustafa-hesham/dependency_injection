@@ -54,8 +54,4 @@ echo $instanceOne->getSentence().'<br>';
 $instanceTwo = new classIoC($classTwoObj);
 echo $instanceTwo->getSentence().'<br>';
 
-
-
-
-
 ?>
