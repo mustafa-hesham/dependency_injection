@@ -1,10 +1,10 @@
 <?php
-interface UniversalMethods{
+interface Universalclasss{
     public function add($string);
     public function call();
 }
 
-class ClassOne implements UniversalMethods {
+class ClassOne implements Universalclasss {
     private $classString;
     public function add($string)
     {
@@ -18,7 +18,7 @@ class ClassOne implements UniversalMethods {
 }
 
 
-class ClassTwo implements UniversalMethods {
+class ClassTwo implements Universalclasss {
     private $classString;
     public function add($string)
     {
@@ -34,24 +34,20 @@ class ClassTwo implements UniversalMethods {
 class ClassIoC {
     private $sentence;
 
-    public function __construct(UniversalMethods $method){
-        $method->add('This is the sentence!');
-        $this->sentence = $method->call();
+    public function __construct(Universalclasss $class){
+        $class->add('This is the sentence!');
+        $this->sentence = $class->call();
     }
 
     public function getSentence(){
         return $this->sentence;
     }
-
 }
 
-$ClassOneObj = new ClassOne();
-$ClassTwoObj = new ClassTwo();
-
-$instanceOne = new ClassIoC($ClassOneObj);
+$instanceOne = new ClassIoC(new ClassOne());
 echo $instanceOne->getSentence().'<br>';
 
-$instanceTwo = new ClassIoC($ClassTwoObj);
+$instanceTwo = new ClassIoC(new ClassTwo());
 echo $instanceTwo->getSentence().'<br>';
 
 ?>
