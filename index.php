@@ -4,7 +4,7 @@ interface UniversalMethods{
     public function call();
 }
 
-class classOne implements UniversalMethods {
+class ClassOne implements UniversalMethods {
     private $classString;
     public function add($string)
     {
@@ -18,7 +18,7 @@ class classOne implements UniversalMethods {
 }
 
 
-class classTwo implements UniversalMethods {
+class ClassTwo implements UniversalMethods {
     private $classString;
     public function add($string)
     {
@@ -31,7 +31,7 @@ class classTwo implements UniversalMethods {
 
 }
 
-class classIoC {
+class ClassIoC {
     private $sentence;
 
     public function __construct(UniversalMethods $method){
@@ -45,13 +45,13 @@ class classIoC {
 
 }
 
-$classOneObj = new classOne();
-$classTwoObj = new classTwo();
+$ClassOneObj = new ClassOne();
+$ClassTwoObj = new ClassTwo();
 
-$instanceOne = new classIoC($classOneObj);
+$instanceOne = new ClassIoC($ClassOneObj);
 echo $instanceOne->getSentence().'<br>';
 
-$instanceTwo = new classIoC($classTwoObj);
+$instanceTwo = new ClassIoC($ClassTwoObj);
 echo $instanceTwo->getSentence().'<br>';
 
 ?>
