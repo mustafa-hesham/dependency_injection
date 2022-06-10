@@ -12,7 +12,7 @@ class ClassOne implements Universalclasss {
     }
 
     public function call(){
-        return get_class($this).' '.$this->classString;
+        return get_class($this).': '.$this->classString;
     }
 
 }
@@ -26,7 +26,7 @@ class ClassTwo implements Universalclasss {
     }
 
     public function call(){
-        return get_class($this).' '.$this->classString;
+        return get_class($this).': '.$this->classString;
     }
 
 }
