@@ -1,10 +1,10 @@
 <?php
-interface Universalclasss{
+interface Universalclass{
     public function add($string);
     public function call();
 }
 
-class ClassOne implements Universalclasss {
+class ClassOne implements Universalclass {
     private $classString;
     public function add($string)
     {
@@ -18,7 +18,7 @@ class ClassOne implements Universalclasss {
 }
 
 
-class ClassTwo implements Universalclasss {
+class ClassTwo implements Universalclass {
     private $classString;
     public function add($string)
     {
@@ -34,7 +34,7 @@ class ClassTwo implements Universalclasss {
 class ClassIoC {
     private $sentence;
 
-    public function __construct(Universalclasss $class){
+    public function __construct(Universalclass $class){
         $class->add('This is the sentence!');
         $this->sentence = $class->call();
     }
